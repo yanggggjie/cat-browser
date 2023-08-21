@@ -1,13 +1,13 @@
 import { clsx } from 'clsx'
 import _ from 'lodash-es'
-import React from 'react'
-import { AiFillAndroid } from 'react-icons/ai'
+import Test from './components/Test.tsx'
+import { useState } from 'react'
 interface Props {}
 
 function Component({}: Props) {
   return (
     <div>
-      <AiFillAndroid></AiFillAndroid>
+      <Test></Test>
     </div>
   )
 }
