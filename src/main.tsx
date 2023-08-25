@@ -11,10 +11,17 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
     <SWRConfig
       value={{
-        fetcher: (url) => {
-          return axios.get(url).then((res) => {
-            return res.data
-          })
+        // fetcher: (url) => {
+        //   return axios.get(url,{
+        //     headers: {
+        //       'x-api-key': import.meta.env.VITE_API_KEY,
+        //   }}).then((res) => {
+        //     return res.data
+        //   })
+        // },
+        fetcher: async (url: string) => {
+          const res = await axios.get(url)
+          return res.data
         },
       }}
     >
