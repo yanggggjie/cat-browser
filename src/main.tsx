@@ -23,6 +23,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           const res = await axios.get(url)
           return res.data
         },
+        revalidateOnFocus: false,
       }}
     >
       <App />
