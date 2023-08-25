@@ -1,13 +1,14 @@
 import { clsx } from 'clsx'
 import _ from 'lodash-es'
 import Test from './components/Test.tsx'
-import { useState } from 'react'
-interface Props {}
+import Copy from './components/Copy.tsx'
 
-function Component({}: Props) {
+function Component() {
   return (
     <div>
       <Test></Test>
+      <hr />
+      <Copy></Copy>
     </div>
   )
 }
