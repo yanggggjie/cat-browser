@@ -1,36 +1,26 @@
 import { clsx } from 'clsx'
 import _ from 'lodash-es'
-import useSWR, { preload } from 'swr'
 interface Props {}
-import { useSWRConfig } from 'swr'
+import { useWindowScroll } from '@uidotdev/usehooks'
 import { useEffect, useState } from 'react'
-import * as QueryString from 'qs'
 function Component() {
-  const [page, setPage] = useState(0)
-  const url = `https://pokeapi.co/api/v2/ability/?offset=${page * 20}&limit=20`
+  const [{ x, y }, scrollTo] = useWindowScroll()
 
-  function sortQuery(url: string) {
-    const _url = new URL(url)
-    _url.searchParams.sort()
-    return _url.toString()
-  }
+  const defaultData = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+  const [data, setData] = useState(defaultData)
+  useEffect(() => {
+    const pageBottom = document.documentElement.scrollHeight
+    const scrollBottom = y + window.innerHeight
+    if (pageBottom - scrollBottom < 100) {
+      setData([...data, ...defaultData])
+    }
+  }, [y])
 
-  const config = useSWRConfig()
-  const { isLoading, data, error } = useSWR(url)
-  if (isLoading) return <div>Loading...</div>
-  if (error) return <div>Error...</div>
-  preload(data.next, config.fetcher)
-
-  function handleNextPage() {
-    setPage((page) => {
-      return page + 1
-    })
-  }
   return (
-    <div>
-      <button onClick={handleNextPage}>next page</button>
-      <hr />
-      {JSON.stringify(data)}
+    <div className={clsx('space-y-40')}>
+      {data.map((value, index) => {
+        return <div key={index}>{value}</div>
+      })}
     </div>
   )
 }
