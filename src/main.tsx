@@ -6,21 +6,23 @@ import { SWRConfig } from 'swr'
 import axios from 'axios'
 import { BrowserRouter } from 'react-router-dom'
 
+export function sortQuery(url: string) {
+  const _url = new URL(url)
+  _url.searchParams.sort()
+  return _url.toString()
+}
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   // <React.StrictMode>
   <BrowserRouter>
     <SWRConfig
       value={{
-        // fetcher: (url) => {
-        //   return axios.get(url,{
-        //     headers: {
-        //       'x-api-key': import.meta.env.VITE_API_KEY,
-        //   }}).then((res) => {
-        //     return res.data
-        //   })
-        // },
         fetcher: async (url: string) => {
-          const res = await axios.get(url)
+          /*
+           ! useSWR use url as cache key
+           ! make sure different query string order has the same cache key
+           */
+          const res = await axios.get(sortQuery(url))
           return res.data
         },
         revalidateOnFocus: false,
