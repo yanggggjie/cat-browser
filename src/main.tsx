@@ -22,8 +22,14 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
            ! useSWR use url as cache key
            ! make sure different query string order has the same cache key
            */
-          const res = await axios.get(sortQuery(url))
-          return res.data
+          try {
+            const res = await axios.get(sortQuery(url))
+            return res.data
+          } catch (e) {
+            console.log('error in fetcher')
+            console.log(`url: ${url}`)
+            console.log(e)
+          }
         },
         revalidateOnFocus: false,
       }}
