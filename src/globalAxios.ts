@@ -1,17 +1,8 @@
 import axios from 'axios'
-axios.defaults.baseURL = 'https://api.thecatapi.com/v1'
-import _ from 'lodash-es'
-
-// utils
-export function sortQueryObject(queryObject: object) {
-  return _.fromPairs(_.sortBy(_.toPairs(queryObject), 0))
-}
-
 axios.interceptors.request.use(
   async function (config) {
     // 在发送请求之前做些什么
 
-    config.params = sortQueryObject(config.params)
     return config
   },
   async function (error) {
