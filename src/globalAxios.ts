@@ -29,26 +29,4 @@ axios.interceptors.response.use(
   },
 )
 
-// useSWR fetcher
-export async function fetcher(url: string) {
-  /*
- ! useSWR use url as cache key
- ! make sure different query string order has the same cache key
- */
-  try {
-    const res = await axios.get(sortQuery(url))
-    return res.data
-  } catch (e) {
-    console.log('error in fetcher')
-    console.log(`url: ${url}`)
-    console.log(e)
-  }
-}
-
-export function sortQuery(url: string) {
-  const _url = new URL(url)
-  _url.searchParams.sort()
-  return _url.toString()
-}
-
 export default axios
