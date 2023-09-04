@@ -1,12 +1,15 @@
 import axios from 'axios'
 
 // Set the base URL or other default settings
-axios.defaults.baseURL = 'https://api.spotify.com/v1'
+axios.defaults.baseURL = 'https://api.thecatapi.com/v1'
 
 // 添加请求拦截器
 axios.interceptors.request.use(
   async function (config) {
     // 在发送请求之前做些什么
+    config.params = {
+      api_key: import.meta.env.VITE_API_KEY,
+    }
     return config
   },
   async function (error) {
@@ -28,27 +31,5 @@ axios.interceptors.response.use(
     return Promise.reject(error)
   },
 )
-
-// useSWR fetcher
-export async function fetcher(url: string) {
-  /*
- ! useSWR use url as cache key
- ! make sure different query string order has the same cache key
- */
-  try {
-    const res = await axios.get(sortQuery(url))
-    return res.data
-  } catch (e) {
-    console.log('error in fetcher')
-    console.log(`url: ${url}`)
-    console.log(e)
-  }
-}
-
-export function sortQuery(url: string) {
-  const _url = new URL(url)
-  _url.searchParams.sort()
-  return _url.toString()
-}
 
 export default axios
