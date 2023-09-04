@@ -1,26 +1,23 @@
-import { Suspense, useEffect, useState } from 'react'
+import { clsx } from 'clsx'
+import _ from 'lodash-es'
+import useSWR from 'swr'
+import globalAxios from '../globalAxios.ts'
+interface Props {}
 
-function Sub({ count }: { count: number }) {
-  return <div>count is {count}</div>
+function Component({}: Props) {
+  async function fetcher(url: string) {
+    return await globalAxios.get(url, {
+      params: {
+        b: 2,
+        a: 1,
+        c: 3,
+      },
+    })
+  }
+  const { data, isLoading, error } = useSWR('/search', fetcher)
+  if (isLoading) return <div>loading</div>
+  if (error) return <div>error</div>
+  return <div></div>
 }
-const App = () => {
-  const [count, setCount] = useState(0)
 
-  useEffect(() => {
-    setInterval(() => {
-      setCount((count) => {
-        return count + 1
-      })
-    }, 10000)
-  }, [])
-
-  return (
-    <>
-      <Suspense fallback={<div>loading...</div>}>
-        <Sub count={count} />
-      </Suspense>
-      <div>count is {count}</div>
-    </>
-  )
-}
-export default App
+export default Component
