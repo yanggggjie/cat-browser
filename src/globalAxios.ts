@@ -1,5 +1,4 @@
 import axios from 'axios'
-axios.defaults.baseURL = 'https://api.thecatapi.com/v1'
 axios.interceptors.request.use(
   async function (config) {
     // 在发送请求之前做些什么
