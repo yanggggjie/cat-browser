@@ -3,6 +3,9 @@
     {
       "source": "/proxy/:path*",
       "destination": "http://localhost:3001/:path*"
+    },{
+      "source": "/imageProxy/:path*",
+      "destination": "https://cdn2.thecatapi.com/:path*"
     }
   ]
 }

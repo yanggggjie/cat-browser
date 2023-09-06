@@ -1,6 +1,7 @@
 import { clsx } from 'clsx'
-import Image from './Image'
 import { useNavigate } from 'react-router-dom'
+import React from 'react'
+import Image from './Image.js'
 interface Props {
   catList: { id: string; name: string }[]
   page: number

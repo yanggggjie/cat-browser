@@ -1,7 +1,7 @@
 import { clsx } from 'clsx'
 import useSWR from 'swr'
-import sortQueryOrder from '../../utils/sortQueryOrder'
 import * as QueryString from 'qs'
+import sortQueryOrder from '../../utils/sortQueryOrder.js'
 interface Props {
   id: string
 }
