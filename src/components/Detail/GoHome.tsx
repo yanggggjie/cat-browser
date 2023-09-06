@@ -9,7 +9,7 @@ function Component() {
   }
   return (
     <div
-      className={clsx('fixed  top-1 left-1  text-5xl')}
+      className={clsx('fixed  top-1/2 -translate-y-1/2 left-1  text-5xl')}
       onClick={handleClick}
     >
       <BiHomeCircle></BiHomeCircle>
