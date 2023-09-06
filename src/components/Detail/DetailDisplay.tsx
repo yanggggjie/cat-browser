@@ -1,7 +1,7 @@
 import { clsx } from 'clsx'
 import useSWR from 'swr'
 import * as QueryString from 'qs'
-import Item from './Item.jsx'
+import Item from './Item'
 interface Props {
   id: string
   name: string

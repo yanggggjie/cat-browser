@@ -1,5 +1,4 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import * as ReactDOM from 'react-dom'
 import './index.css'
 import { SWRConfig } from 'swr'
 import { BrowserRouter } from 'react-router-dom'

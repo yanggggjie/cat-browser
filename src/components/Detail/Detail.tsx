@@ -1,10 +1,10 @@
 import { clsx } from 'clsx'
 import { useNavigate, useParams } from 'react-router-dom'
 import useSWR from 'swr'
-import sortQueryOrder from '../../utils/sortQueryOrder.js'
+import sortQueryOrder from '../../utils/sortQueryOrder'
 import { useEffect } from 'react'
-import DetailDisplay from './DetailDisplay.jsx'
-import GoHome from './GoHome.jsx'
+import DetailDisplay from './DetailDisplay'
+import GoHome from './GoHome'
 
 function Component() {
   const navigate = useNavigate()

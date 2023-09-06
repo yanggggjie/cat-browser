@@ -1,11 +1,10 @@
 import { clsx } from 'clsx'
 import useSWR from 'swr'
-import sortQueryOrder from '../../utils/sortQueryOrder.js'
+import sortQueryOrder from '../../utils/sortQueryOrder'
 import { useEffect, useRef, useState } from 'react'
-import BoardDisplay from './BoardDisplay.jsx'
-import Search from './Search.jsx'
-import useScrollBottom2PageBottomDistance from '../../hooks/useScrollBottom2PageBottomDistance.js'
-import { useDebounce } from 'usehooks-ts'
+import BoardDisplay from './BoardDisplay'
+import Search from './Search'
+import useScrollBottom2PageBottomDistance from '../../hooks/useScrollBottom2PageBottomDistance'
 interface Props {}
 
 function Component() {

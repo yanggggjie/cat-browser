@@ -1,9 +1,9 @@
 import { clsx } from 'clsx'
 import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Board from './components/Board/Board.js'
-import Detail from './components/Detail/Detail.js'
-import NotFound from './components/NotFound.js'
+import Board from './components/Board/Board'
+import Detail from './components/Detail/Detail'
+import NotFound from './components/NotFound'
 
 function Component() {
   return (
