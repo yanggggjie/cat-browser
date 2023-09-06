@@ -16,9 +16,9 @@
 //    "allowImportingTsExtensions": true,
 
     /* conflict with vercel*/
-    // note moduleResolution千万不要设置为nodenext
-    "moduleResolution": "node",
-//    "allowImportingTsExtensions": false,
+    "moduleResolution": "nodenext",
+//    "allowImportingTsExtensions": true,
+    /* conflict with vercel*/
 
 
     "resolveJsonModule": true,

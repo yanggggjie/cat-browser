@@ -1,6 +1,6 @@
 import { clsx } from 'clsx'
-import Copy from './components/Copy'
-import Test from './components/Test'
+import Copy from './components/Copy.js'
+import Test from './components/Test.js'
 
 function Component() {
   return (
