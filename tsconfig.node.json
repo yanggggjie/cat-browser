@@ -3,9 +3,10 @@
     "composite": true,
     "skipLibCheck": true,
     "module": "ESNext",
-    // note   conflict with vercel node
-    //    "moduleResolution": "bundler",
-    "moduleResolution": "nodenext",
+//    "moduleResolution": "bundler",
+    /* conflict with vercel */
+    // note moduleResolution千万不要设置为nodenext
+    "moduleResolution": "node",
     "allowSyntheticDefaultImports": true
   },
   "include": ["vite.config.ts"]

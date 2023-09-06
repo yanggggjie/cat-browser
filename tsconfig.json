@@ -12,12 +12,14 @@
     "skipLibCheck": true,
 
     /* Bundler mode */
-    //note   conflict with vercel node
-    //    "moduleResolution": "bundler",
-    "moduleResolution": "nodenext",
-
-    //note   conflict with vercel node
+//    "moduleResolution": "bundler",
 //    "allowImportingTsExtensions": true,
+
+    /* conflict with vercel*/
+    // note moduleResolution千万不要设置为nodenext
+    "moduleResolution": "node",
+//    "allowImportingTsExtensions": false,
+
 
     "resolveJsonModule": true,
     "isolatedModules": true,
