@@ -1,7 +1,7 @@
 import { clsx } from 'clsx'
-import _ from 'lodash-es'
-import { GrDocumentDownload } from 'react-icons/gr'
+import { GrDocumentDownload } from 'react-icons/gr/index.js'
 import { saveAs } from 'file-saver'
+import { last } from 'lodash-es'
 interface Props {
   url: string
   name: string
@@ -9,7 +9,7 @@ interface Props {
 
 function Component({ url, name }: Props) {
   async function handleClick() {
-    const imageName = _.last(url.split('/'))
+    const imageName = last(url.split('/'))
     const res = await fetch(url)
     const blob = await res.blob()
     saveAs(blob, `${name}-${imageName}`)

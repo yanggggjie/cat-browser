@@ -1,5 +1,4 @@
 import { clsx } from 'clsx'
-import _ from 'lodash-es'
 import { useNavigate } from 'react-router-dom'
 
 function Component() {

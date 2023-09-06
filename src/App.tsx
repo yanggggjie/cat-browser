@@ -1,10 +1,9 @@
 import { clsx } from 'clsx'
-import _ from 'lodash-es'
-import Board from './components/Board/Board.tsx'
 import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Detail from './components/Detail/Detail.tsx'
-import NotFound from './components/NotFound.tsx'
+import Board from './components/Board/Board.js'
+import Detail from './components/Detail/Detail.js'
+import NotFound from './components/NotFound.js'
 
 function Component() {
   return (

@@ -1,7 +1,6 @@
 import { clsx } from 'clsx'
-import _ from 'lodash-es'
 import useSWR from 'swr'
-import sortQueryOrder from '../../utils/sortQueryOrder.ts'
+import sortQueryOrder from '../../utils/sortQueryOrder.js'
 import * as QueryString from 'qs'
 interface Props {
   id: string

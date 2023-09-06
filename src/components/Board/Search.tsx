@@ -1,5 +1,4 @@
 import { clsx } from 'clsx'
-import _ from 'lodash-es'
 interface Props {
   searchText: string
   setSearchText: (searchText: string) => void

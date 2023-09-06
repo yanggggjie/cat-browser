@@ -1,9 +1,7 @@
 import { clsx } from 'clsx'
-import _ from 'lodash-es'
 import useSWR from 'swr'
 import * as QueryString from 'qs'
-import Item from './Item.tsx'
-import item from './Item.tsx'
+import Item from './Item.jsx'
 interface Props {
   id: string
   name: string

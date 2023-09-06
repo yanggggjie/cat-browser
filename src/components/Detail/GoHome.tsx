@@ -1,6 +1,5 @@
 import { clsx } from 'clsx'
-import _ from 'lodash-es'
-import { BiHomeCircle } from 'react-icons/bi'
+import { BiHomeCircle } from 'react-icons/bi/index.js'
 import { useNavigate } from 'react-router-dom'
 
 function Component() {
