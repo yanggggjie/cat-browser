@@ -17,7 +17,7 @@
     "moduleResolution": "nodenext",
 
     //note   conflict with vercel node
-    //    "allowImportingTsExtensions": true,
+//    "allowImportingTsExtensions": true,
 
     "resolveJsonModule": true,
     "isolatedModules": true,

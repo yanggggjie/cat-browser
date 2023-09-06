@@ -1,13 +1,13 @@
 import { clsx } from 'clsx'
-import _ from 'lodash-es'
-import Test from './components/Test.tsx'
-import Copy from './components/Copy.tsx'
+import Test from './components/Test.js'
+import Copy from './components/Copy.js'
 
 function Component() {
   return (
     <div>
       <Test></Test>
       <hr />
+      {}
       <Copy></Copy>
     </div>
   )

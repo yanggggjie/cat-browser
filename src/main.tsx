@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
 import './index.css'
 import { SWRConfig } from 'swr'
 import { BrowserRouter } from 'react-router-dom'
-import globalFetcher from './globalFetcher.ts'
+import globalFetcher from './globalFetcher.js'
+import App from './App.js'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   // <React.StrictMode>
