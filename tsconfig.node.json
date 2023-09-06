@@ -5,8 +5,8 @@
     "module": "ESNext",
 //    "moduleResolution": "bundler",
     /* conflict with vercel */
-    // note moduleResolution千万不要设置为nodenext
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
+    /* conflict with vercel */
     "allowSyntheticDefaultImports": true
   },
   "include": ["vite.config.ts"]

@@ -1,5 +1,7 @@
 import { clsx } from 'clsx'
 import axios from 'axios'
+import React from 'react'
+import { AiFillAccountBook } from 'react-icons/ai/index.js'
 interface Props {}
 
 function Component({}: Props) {
@@ -10,6 +12,7 @@ function Component({}: Props) {
 
   return (
     <div>
+      <AiFillAccountBook></AiFillAccountBook>
       <button onClick={handleClick}>click</button>
     </div>
   )
